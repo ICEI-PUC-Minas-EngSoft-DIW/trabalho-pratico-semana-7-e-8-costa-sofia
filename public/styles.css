@@ -1,0 +1,603 @@
+*{box-sizing: border-box;}
+
+body
+{
+    font-family:'Langar', cursive;;
+    border: none;
+    margin: 0;
+    background-color: rgba(0, 0, 0);
+    color: white;  
+}
+
+/*header start*/
+header
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10%;
+}
+header h1
+{
+    font-family: 'Kavoon', cursive;
+    font-size: 2.5em;
+    background: linear-gradient(180deg, #8C00FB 21.88%, rgba(255, 10, 186, 0.72) 99.98%, rgba(248, 47, 240, 0.07) 99.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    width: 230px;
+}
+header ul
+{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+header svg
+{
+    fill: white
+}
+header a
+{
+    text-decoration: none;
+}
+
+#menu li
+{
+    position: relative;
+    text-align: center;
+}
+.menuInfo
+{
+    position: absolute;
+    display: none; 
+}
+
+#photographs
+{ 
+    top: 1vh;
+    right: -2.6vw;
+}
+
+#paintings
+{
+    top: 1vh;
+    right: -1.5vw;
+}
+#register
+{ 
+    top: 1vh;
+    right: -1vw;
+}
+#login
+{
+    top: 1vh;
+    left: -1.3vw;
+    white-space: nowrap;
+} 
+
+header li:hover svg
+{
+    fill:#9f33f8;
+    
+}
+
+#menu li:hover p
+{
+    display: block;
+    color:#9f33f8; 
+}
+nav {
+    display: none;
+}
+
+@media screen and (min-width: 240px) and (max-width: 500px){
+    header #social{
+        display: none;
+    }
+    header #menu{
+        display: none;
+    }
+    nav{
+        display: flex;
+    }
+    nav ul{
+        width: fit-content;
+        padding: 0%;
+    }
+}
+/*header end*/
+
+/*navigation start*/
+nav
+{
+    justify-content: space-between;
+    width: 100%;
+}
+nav ul
+{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+nav svg
+{
+    fill: white
+}
+nav a
+{
+    text-decoration: none;
+}
+nav li:hover svg
+{
+    fill:#9f33f8;
+    
+}
+/*navigation end*/
+
+
+/* banner start */
+#banner
+{
+    margin-bottom: 5%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 83vh;
+    background-image: url(https://cdn.pixabay.com/photo/2018/07/20/01/42/rio-de-janeiro-3549798_1280.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    filter: saturate(0);
+    text-align: center;
+    transition: 2s;
+}
+
+#hover {
+    display: none;
+}
+
+#introduction {
+    background-color: rgba(0, 0, 0, 0.52);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: 2s;
+
+}  
+  
+#banner:hover #hover {
+    display: block;
+    transition: 2s;
+
+}
+  
+#banner:hover #introduction {
+    display: none;
+    transition: 2s;
+
+}  
+
+#banner span
+{
+    font-size: 1.5em;  
+}
+
+#banner a
+{   
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: solid 2px white;
+    width: 41vh;
+    transition: 1s;
+    
+}
+#banner:hover
+{
+    filter: saturate(2);
+}
+
+#banner a:hover
+{
+    background-color: rgba(43, 38, 38, 0.483);
+}
+
+
+@media screen and (min-width: 240px) and (max-width: 500px){
+    #banner{
+        height: 50vh;
+        font-size: 0.8em;
+
+    }
+}
+/* banner end */
+
+/* support us start*/
+#supportus
+{
+    padding: 5% 20% 5% 20%; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20%;
+    font-size: 1.5em; 
+    border: solid 1px #8C00FB;
+    border-left: none;
+    border-right: none;
+}
+
+.description{
+    display: none;
+}
+
+#supportus:hover .description{
+    display: block;
+}
+
+#supportus div
+{
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+}
+#life p
+{
+    line-height: 40vh ;
+    margin: 10vh;
+    display: none;
+    transition: linear 1s;
+}
+#love p
+{
+    line-height: 40vh ;
+    margin: 10vh;
+    display: none;
+    transition: linear 1s;
+}
+#life
+{
+    background-image: url(https://cdn.pixabay.com/photo/2018/05/22/00/32/graffiti-3420156_1280.jpg);
+    background-size: cover;
+}
+#love
+{
+    background-image: url(https://cdn.pixabay.com/photo/2022/02/13/21/06/grafitti-7011980_1280.jpg);
+    background-size: cover;
+}
+#supportus a
+{   
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: solid 2px white;
+    width: 100%;
+    transition: 1s;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: s;
+}
+
+#supportus a:hover
+{
+    background: linear-gradient(180deg, #8a00fb5e 21.88%, rgba(255, 10, 186, 0.35) 99.98%, rgba(248, 47, 240, 0.07) 99.99%);
+}
+
+#supportus div:hover p
+{
+    display: block;
+    margin: 0vh;
+    transition: linear 1s;
+}
+
+.container{
+    display: grid;
+    row-gap: 3vh;
+}
+
+@media screen and (min-width: 240px) and (max-width: 500px){
+    #supportus {
+        grid-template-columns: 1fr; /* só uma coluna */
+        row-gap: 5vh;
+        column-gap: 0;
+        padding: 5%;
+        font-size: 1.2em;
+      }
+
+      .container{
+        justify-content: center;
+      }
+    
+      #supportus div,
+      #supportus .description,
+      #supportus a {
+        grid-column: 1;
+        width: 100%;
+      }
+    
+      #supportus a {
+        margin: 2vh auto; 
+        display: block;
+        width: 100%; 
+        padding: 10px 20px;
+      }
+}
+/* support us end*/
+
+/* get to know start */
+#seeus
+{
+    margin: 5% 0 5% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 83vh;
+    background-image: url(https://cdn.pixabay.com/photo/2018/05/22/00/43/graffiti-3420171_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: saturate(0);
+    text-align: center;
+    transition: 1s;
+    font-size: 1.5em;
+}
+#seeus span
+{
+    font-size: 1.5em;  
+}
+#seeus:hover
+{
+    filter: saturate(2);
+}
+
+@media screen and (min-width: 240px) and (max-width: 500px){
+    #seeus{
+        height: 50vh;
+        font-size: 1.0em;
+    }
+}
+/* get to know end */
+
+/* locations start */
+#locations
+{
+    display: flex;
+    text-align: center;
+    font-size: 1.5em;
+    border: solid 1px #8C00FB;
+    border-left: none;
+    border-right: none;
+    padding: 5%; 
+    justify-content: space-evenly;
+    height: fit-content;
+
+}
+#locations div
+{
+    height: 40vh;
+    width: 40vh;
+    justify-self: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    line-height: 40vh;
+}
+#locations p
+{
+    margin: 0%;
+    display: none;
+}
+#bronx
+{
+    background-image: url(https://media.istockphoto.com/id/173749990/photo/bronx-graffiti.webp?b=1&s=612x612&w=0&k=20&c=J_q9LeMSBKmSwJfaMgxtTRMKLOfJzHYnkSIKZr7FVMU=);
+}
+#brooklyn
+{
+    background-image: url(https://media.istockphoto.com/id/497413949/photo/new-york-city-streets.webp?b=1&s=612x612&w=0&k=20&c=PQJgWEI2oYiXAh6Y4jE5UDbnZHD8fcHqX7k9BvT3-i4=);
+}
+#manhattan
+{
+    background-image: url(https://media.istockphoto.com/id/516981441/photo/manhattan.webp?b=1&s=612x612&w=0&k=20&c=Bu8amhF7j_OzJTeuaNYJ4EdCnUoE3QDsIms7gGJJVS0=);
+}
+#locations div:hover
+{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+#locations div:hover p
+{
+    display: block;
+    transition: 2s linear;
+}
+
+@media screen and (min-width: 240px) and (max-width: 500px){
+    
+    #locations{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 5%;
+        height: fit-content;
+        padding-bottom: 12vh;
+    }
+    #locations div{
+        height: 30vh;
+        width: 30vh;
+        line-height: 30vh;
+
+    }
+}
+/* locations end */
+
+/* gallery presentation start */
+#gallery
+{
+    padding: 5% 15% 5% 15%;
+    display: grid;
+    grid-template-rows: 1fr 0.5fr;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    text-align: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+}
+#gallery svg
+{
+    fill: #8C00FB;
+    justify-self: center;
+    transition: 1s;
+}
+#gallery p
+{
+    margin-bottom: 0;
+}
+#gallery svg:hover
+{
+    transform: scale(1.2);
+    
+}
+.highlights
+{
+    font-family: 'Kavoon', cursive;
+    font-size: 1.2em;
+    background: linear-gradient(180deg, #8C00FB 21.88%, rgba(255, 10, 186, 0.72) 99.98%, rgba(248, 47, 240, 0.07) 99.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+}
+
+#buy
+{
+    border: solid 1px #8C00FB;
+    margin: 0 auto;
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 5%;
+    font-size: 3.5rem;
+    box-shadow: 10px 30px 30px 10px #8a00fb42;
+    grid-row: span 2;
+}
+
+@media screen and (min-width: 240px) and (max-width: 500px){
+    
+    #gallery{
+        display: none;
+    }
+}
+/* gallery presentation end */
+
+/* footer start*/
+footer
+{
+    margin-top: 10vh;
+}
+footer div
+{
+    display: inline;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer svg
+{
+    fill: #8C00FB;
+}
+
+footer a 
+{
+    color: #8C00FB;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 240px) and (max-width: 500px){
+    footer div{
+        font-size: 0.45em;
+    }
+
+}
+/* footer end*/
+
+/* locations start */
+#locations
+{
+    display: flex;
+    text-align: center;
+    font-size: 1.5em;
+    border: solid 1px #8C00FB;
+    border-left: none;
+    border-right: none;
+    padding: 5%; 
+    justify-content: space-evenly;
+    height: fit-content;
+
+}
+#locations div
+{
+    height: 40vh;
+    width: 40vh;
+    justify-self: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    line-height: 40vh;
+}
+#locations p
+{
+    margin: 0%;
+    display: none;
+}
+#bronx
+{
+    background-image: url(https://media.istockphoto.com/id/173749990/photo/bronx-graffiti.webp?b=1&s=612x612&w=0&k=20&c=J_q9LeMSBKmSwJfaMgxtTRMKLOfJzHYnkSIKZr7FVMU=);
+}
+#brooklyn
+{
+    background-image: url(https://media.istockphoto.com/id/497413949/photo/new-york-city-streets.webp?b=1&s=612x612&w=0&k=20&c=PQJgWEI2oYiXAh6Y4jE5UDbnZHD8fcHqX7k9BvT3-i4=);
+}
+#manhattan
+{
+    background-image: url(https://media.istockphoto.com/id/516981441/photo/manhattan.webp?b=1&s=612x612&w=0&k=20&c=Bu8amhF7j_OzJTeuaNYJ4EdCnUoE3QDsIms7gGJJVS0=);
+}
+#locations div:hover
+{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+#locations div:hover p
+{
+    display: block;
+    transition: 2s linear;
+}
+
+@media screen and (min-width: 240px) and (max-width: 500px){
+    
+    #locations{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 5%;
+        height: fit-content;
+        padding-bottom: 12vh;
+    }
+    #locations div{
+        height: 30vh;
+        width: 30vh;
+        line-height: 30vh;
+
+    }
+}
+/* locations end */
+
+
+
+
