@@ -21,7 +21,7 @@ Leia o enunciado completo no Canvas.
 
 <<  COLOQUE A IMAGEM AQUI >>
 
-Para melhor coerência com a minha ideia do projeto adicionei uma página exta para carregar as imagens.
+Para melhor coerência com a minha ideia do projeto adicionei uma página extra para carregar as imagens.
 
 ![Print da página criada com carregamento dinâmico das imegens](photographs.png)
 
