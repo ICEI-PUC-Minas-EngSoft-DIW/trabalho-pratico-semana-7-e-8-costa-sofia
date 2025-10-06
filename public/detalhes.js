@@ -100,109 +100,31 @@ const gallery = [
     }
 ];
 
-function renderGallery() {
-    const gallerySection = document.getElementById("gallery");
-    if (!gallerySection) return; // Caso não exista, não faz nada
-    gallerySection.innerHTML = ""; // Limpa a galeria antes de renderizar
-
+function carregarDetalhes() {
+    const section = document.getElementById("detalhes");
     gallery.forEach(item => {
-        const article = document.createElement("article");
+        const card = document.createElement("div");
+        card.classList.add("card", "mb-3");
+        card.style.maxWidth = "540px";
 
-        // Div da imagem
-        const paintingDiv = document.createElement("div");
-        paintingDiv.className = "painting";
-        paintingDiv.style.backgroundImage = `url(${item.imagem})`;
-        paintingDiv.title = item.titulo;
-
-        // Título sobre a imagem
-        const title = document.createElement("p");
-        title.textContent = item.titulo;
-        paintingDiv.appendChild(title);
-
-        // Clique leva à página de detalhes
-        paintingDiv.addEventListener("click", () => {
-            window.location.href = `detalhes.html?id=${item.id}`;
-        });
-
-        // Div com preço e ícone de carrinho
-        const pricesDiv = document.createElement("div");
-        pricesDiv.className = "prices";
-
-        const priceP = document.createElement("p");
-        priceP.textContent = `$${item.price.toFixed(2)}`;
-        pricesDiv.appendChild(priceP);
-
-        const svgIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svgIcon.setAttribute("height", "1em");
-        svgIcon.setAttribute("viewBox", "0 0 576 512");
-
-        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        path.setAttribute("d", "M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z");
-        svgIcon.appendChild(path);
-        pricesDiv.appendChild(svgIcon);
-
-        article.appendChild(paintingDiv);
-        article.appendChild(pricesDiv);
-
-        gallerySection.appendChild(article);
+        card.innerHTML = `
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${item.imagem}" class="img-fluid rounded-start" alt="${item.titulo}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">${item.titulo}</h5>
+                        <p class="card-text">${item.descricao}</p>
+                        <p class="card-text"><small class="text-muted">Autor: ${item.autor} | Data: ${item.data}</small></p>
+                        <p class="card-text"><strong>Categoria:</strong> ${item.categoria}</p>
+                        <p class="card-text">${item.conteudo}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        section.appendChild(card);
     });
 }
 
-// --- Funções para detalhes ---
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-
-function renderDetails() {
-    const itemId = parseInt(getQueryParam("id"));
-    if (!itemId) return;
-
-    const item = gallery.find(g => g.id === itemId);
-    if (!item) return;
-
-    const detailsSection = document.getElementById("details");
-    if (!detailsSection) return;
-
-    detailsSection.innerHTML = "";
-
-    // Título
-    const title = document.createElement("h1");
-    title.textContent = item.titulo;
-    detailsSection.appendChild(title);
-
-    // Imagem
-    const img = document.createElement("img");
-    img.src = item.imagem;
-    img.alt = item.titulo;
-    detailsSection.appendChild(img);
-
-    // Descrição
-    const desc = document.createElement("p");
-    desc.textContent = item.descricao;
-    detailsSection.appendChild(desc);
-
-    // Conteúdo
-    const conteudo = document.createElement("p");
-    conteudo.textContent = item.conteudo;
-    detailsSection.appendChild(conteudo);
-
-    // Categoria, autor e data
-    const meta = document.createElement("p");
-    meta.textContent = `Categoria: ${item.categoria} | Autor: ${item.autor} | Data: ${item.data}`;
-    detailsSection.appendChild(meta);
-
-    // Preço
-    const price = document.createElement("p");
-    price.textContent = `Preço: $${item.price.toFixed(2)}`;
-    detailsSection.appendChild(price);
-}
-
-// --- Inicialização ---
-document.addEventListener("DOMContentLoaded", () => {
-    if (document.getElementById("details")) {
-        renderDetails();
-    } else if (document.getElementById("gallery")) {
-        renderGallery();
-    }
-});
+window.addEventListener("DOMContentLoaded", carregarDetalhes);

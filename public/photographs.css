@@ -1,0 +1,287 @@
+*{box-sizing: border-box;}
+
+body
+{
+    font-family:'Langar', cursive;;
+    border: none;
+    margin: 0;
+    background-color: rgba(0, 0, 0);
+    color: white;  
+}
+
+/*header start*/
+header
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10% 0 10%;
+}
+header h1
+{
+    font-family: 'Kavoon', cursive;
+    font-size: 2.5em;
+    background: linear-gradient(180deg, #8C00FB 21.88%, rgba(255, 10, 186, 0.72) 99.98%, rgba(248, 47, 240, 0.07) 99.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+header ul
+{
+    display: flex;
+    gap: 30%;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+}
+header svg
+{
+    fill: white
+}
+header a
+{
+    text-decoration: none;
+}
+
+#menu li
+{
+    position: relative;
+    text-align: center;
+}
+.menuInfo
+{
+    position: absolute;
+    display: none; 
+}
+
+#camera
+{
+    fill: #9f33f8;
+}
+
+#photographs
+{ 
+    top: 1vh;
+    right: -2.6vw;
+}
+
+#paintings
+{
+    top: 1vh;
+    right: -1.5vw;
+}
+#register
+{ 
+    top: 1vh;
+    right: -1vw;
+}
+#login
+{
+    top: 1vh;
+    left: -1.3vw;
+    white-space: nowrap;
+} 
+
+/* @media screen and (min-width: 1252px)
+{
+    #photographs
+    { 
+        left: -1.8vw;
+    }
+
+    #paintings
+    {
+        left: -1.4vw;
+    }
+    #register
+    { 
+        left: -1vw;
+    }
+    #login
+    {
+        left: -0.6vw;
+    }
+} */
+
+header li:hover svg
+{
+    fill:#9f33f8;
+    
+}
+
+#menu li:hover p
+{
+    display: block;
+    color:#9f33f8; 
+}
+/*header end*/
+
+/* banner start */
+#banner
+{
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 83vh;
+    background-image: url(https://cdn.pixabay.com/photo/2017/09/04/09/07/modern-art-2713286_640.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+    filter: saturate(0);
+    text-align: center;
+    transition: 1s;
+}
+#banner span
+{
+    font-size: 1.5em;  
+}
+#banner a
+{   
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    transition: 1s;
+    
+}
+#banner:hover
+{
+    filter: saturate(2);
+}
+/* banner end */
+
+/* galery start */
+#gallery
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    gap: 5%;
+    padding: 0 5%;
+
+}
+
+.painting
+{
+    background-color: aliceblue;
+    height: 40vh;
+    width: 100%;
+    transition: 1s;
+    background-size: cover;
+    
+}
+
+#painting1
+{
+    background-image: url(https://cdn.leonardo.ai/users/62103611-9796-4122-8589-b5731d68e6bd/generations/eabb72be-a801-4378-a78e-5202b6ac5d51/Ilustration_V2_political_graffiti_drawing_0.jpg);
+    
+}
+
+#painting2
+{
+    background-image: url(https://cdn.pixabay.com/photo/2018/07/20/01/42/rio-de-janeiro-3549798_1280.jpg);
+}  
+
+
+#painting3
+{
+    background-image: url(https://cdn.leonardo.ai/users/62103611-9796-4122-8589-b5731d68e6bd/generations/f5906da8-87e4-451f-a69d-128fc2704212/Ilustration_V2_indian_graffiti_0.jpg);
+  
+}
+
+#painting4
+{
+    background-image: url(https://cdn.leonardo.ai/users/62103611-9796-4122-8589-b5731d68e6bd/generations/eb233b7e-c529-4ea9-aa6d-27ae9d16eca7/Ilustration_V2_city_graffiti_0.jpg);
+}
+
+#painting5
+{
+    background-image: url(https://cdn.pixabay.com/photo/2019/12/25/19/57/grafitti-4719165_1280.jpg);
+}
+
+#painting6
+{
+    background-image: url(https://cdn.pixabay.com/photo/2017/04/13/14/15/mcdonalds-2227657_1280.jpg);
+}
+
+#painting7
+{
+    background-image: url(https://cdn.leonardo.ai/users/62103611-9796-4122-8589-b5731d68e6bd/generations/cb3254d5-5e90-4b27-95b4-344936b6913e/Ilustration_V2_political_graffiti_painting_0.jpg);
+}
+
+#painting8
+{
+    background-image: url(https://cdn.leonardo.ai/users/62103611-9796-4122-8589-b5731d68e6bd/generations/3bab1f5b-ad39-452e-ab04-bc6dafc2c9b9/Absolute_Reality_v16_photograph_history_graffiti_0.jpg);
+}  
+
+#painting9
+{
+    background-image: url(https://cdn.pixabay.com/photo/2018/05/22/00/43/graffiti-3420171_1280.jpg);
+}
+
+#gallery article:hover .painting
+{
+    box-shadow: 1px 1px 6px 8px #971cfb42; 
+    border: solid 2px #8C00FB;
+    height: 50vh;
+    background-position: center;
+}
+
+.prices
+{
+    transition: 1s;
+    display: flex;
+    align-items: center;
+    border: solid white 2px;
+    font-size: 2rem;
+    justify-content: right;
+    gap: 30%;
+    padding: 0 5%;
+
+}
+.prices p
+{
+    margin: 0%;
+}
+.prices svg
+{
+    fill: white;
+}
+#gallery article:hover .prices
+{
+    background: linear-gradient(180deg, #8a00fb5e 21.88%, rgba(255, 10, 186, 0.35) 99.98%, rgba(248, 47, 240, 0.07) 99.99%);
+}
+/* galery end */
+
+
+/* footer start*/
+footer
+{
+    margin-top: 30vh;
+}
+footer div
+{
+    display: inline;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer svg
+{
+    fill: #8C00FB;
+}
+
+footer a 
+{
+    color: #8C00FB;
+    cursor: pointer;
+}
+
+/* footer end*/
